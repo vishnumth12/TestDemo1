@@ -8,6 +8,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
 public class CloseNthWindowTest {
@@ -15,6 +17,22 @@ public class CloseNthWindowTest {
 	@Test
 	public void closeTheNthWindow() {
 		WebDriver driver;
+		
+		String BROWSER = System.getProperty("browser");
+		
+		if (BROWSER.equalsIgnoreCase("browser")) {
+			driver = new ChromeDriver();
+		}
+		else if (BROWSER.equalsIgnoreCase("firefox")) {
+			driver = new FirefoxDriver();
+		} 
+		else if (BROWSER.equalsIgnoreCase("edge")) {
+			driver = new EdgeDriver();
+		}
+		else {
+			System.out.println("Invalid browser");
+		}
+		
 		int i = 1;
 		LinkedList<String> li = new LinkedList<>();
 		driver = new ChromeDriver();
