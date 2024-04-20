@@ -20,7 +20,7 @@ public class CloseNthWindowTest {
 		
 		String BROWSER = System.getProperty("browser");
 		
-		if (BROWSER.equalsIgnoreCase("browser")) {
+		if (BROWSER.equalsIgnoreCase("chrome")) {
 			driver = new ChromeDriver();
 		}
 		else if (BROWSER.equalsIgnoreCase("firefox")) {
